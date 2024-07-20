@@ -21,3 +21,9 @@ VsCode Extensions:
     "tintinweb.solidity-metrics"
 ]
 ```
+
+## Scripts
+
+Scripts should be used for tasks that require that the container is already up and running to execute.
+
+They are mounted within the container, so they can be executed from the `/workspaces` directory.
