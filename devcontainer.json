@@ -1,0 +1,49 @@
+{
+    // Reference: https://github.com/theredguild/devcontainer/blob/main/.devcontainer/devcontainer.json
+
+    // For format details, see https://aka.ms/devcontainer.json
+    "name": "audit-env",
+
+    // More info: https://containers.dev/guide/dockerfile
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    // Features to add to the dev container. More info: https://containers.dev/features
+    "features": {
+    },
+  
+    // Configure tool-specific properties
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "NomicFoundation.hardhat-solidity",
+          "tintinweb.solidity-visual-auditor",
+          "trailofbits.weaudit",
+          "tintinweb.solidity-metrics"
+        ],
+        "settings": {
+          "terminal.integrated.defaultProfile.linux": "zsh",
+          "terminal.integrated.profiles.linux": { "zsh": { "path": "/usr/bin/zsh" } },
+          "workbench.colorTheme": "Solidity Visual Developer Dark",
+          "editor.wordWrap": "on"
+        }
+      }
+    }
+  
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [3000],
+    
+    // More info: https://containers.dev/implementors/json_reference/#port-attributes
+    // "portsAttributes": {
+    // 	"3000": {
+    // 		"label": "Hello Remote World",
+    // 		"onAutoForward": "notify"
+    // 	}
+    // },
+    
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "echo Dev-container running successfully"
+  
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root
+    // "remoteUser": "root"
+}
