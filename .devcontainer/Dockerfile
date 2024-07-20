@@ -31,9 +31,6 @@ SHELL ["/usr/bin/zsh", "-c"]
 # Include medusa
 COPY --chown=root:root --from=medusa /usr/local/bin/medusa /usr/local/bin/medusa
 
-# User config (dropping privileges)
-USER vscode
-
 # Install rust
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && source $HOME/.cargo/env
 
