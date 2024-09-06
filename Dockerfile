@@ -16,7 +16,7 @@ RUN cd medusa && \
 ###
 ### Devcontainer build stage
 ###
-FROM mcr.microsoft.com/vscode/devcontainers/base:debian
+FROM --platform=linux/amd64 mcr.microsoft.com/vscode/devcontainers/base:debian
 
 # Update packages
 RUN apt-get update
