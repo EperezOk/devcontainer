@@ -54,3 +54,7 @@ COPY --chown=root:root --from=go-builder /usr/local/bin/medusa /usr/local/bin/me
 RUN pipx install solc-select \
     && pipx install slither-analyzer \
     && pipx install crytic-compile
+
+# Install solc
+ENV PATH="/home/vscode/.local/bin:${PATH}"
+RUN solc-select install latest && solc-select use latest
