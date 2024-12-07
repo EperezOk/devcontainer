@@ -25,7 +25,20 @@
           "terminal.integrated.defaultProfile.linux": "zsh",
           "terminal.integrated.profiles.linux": { "zsh": { "path": "/usr/bin/zsh" } },
           "workbench.colorTheme": "Solidity Visual Developer Dark",
-          "editor.wordWrap": "on"
+          "workbench.sideBar.location": "right",
+          "editor.wordWrap": "on",
+          "solidity-va.deco.arguments": false,
+          "solidity-va.codelens.drawio.enable": false,
+          "solidity-va.codelens.unittestStub.enable": false,
+          "solidity-va.codelens.flatten.enable": false,
+          "solidity-va.outline.extras": true,
+          "solidity-va.outline.decorations": true,
+          "solidity-va.outline.enable": true,
+          "solidity-va.outline.var.storage_annotations": true,
+          "solidity-va.deco.statevars": true,
+          "solidity-va.outline.pragmas.show": true,
+          "solidity-va.overviewruler.decorations.enable": true,
+          "solidity-va.codelens.parse.enable": false
         }
       }
     }
