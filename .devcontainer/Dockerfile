@@ -29,9 +29,9 @@ RUN foundryup
 ###
 FROM --platform=linux/amd64 mcr.microsoft.com/vscode/devcontainers/base:debian
 
-# Update packages, install pipx and clean up
+# Update packages, install pipx, cloc and clean up
 RUN apt-get update \
-    && apt-get install -y pipx \
+    && apt-get install -y pipx cloc \
     && rm -rf /var/lib/apt/lists/*
 
 # Set zsh as the default shell

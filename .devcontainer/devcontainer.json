@@ -19,7 +19,8 @@
           "NomicFoundation.hardhat-solidity",
           "tintinweb.solidity-visual-auditor",
           "trailofbits.weaudit",
-          "tintinweb.solidity-metrics"
+          "tintinweb.solidity-metrics",
+          "eamodio.gitlens"
         ],
         "settings": {
           "terminal.integrated.defaultProfile.linux": "zsh",
@@ -27,6 +28,7 @@
           "workbench.colorTheme": "Solidity Visual Developer Dark",
           "workbench.sideBar.location": "right",
           "editor.wordWrap": "on",
+          "gitlens.codeLens.enabled": false,
           "solidity-va.deco.arguments": false,
           "solidity-va.codelens.drawio.enable": false,
           "solidity-va.codelens.unittestStub.enable": false,
