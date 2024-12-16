@@ -6,7 +6,7 @@
 ###
 ### Go build stage
 ###
-FROM golang:1.22 AS go-builder
+FROM --platform=linux/amd64 golang:1.22 AS go-builder
 
 WORKDIR /src
 RUN git clone https://github.com/crytic/medusa.git \
@@ -17,7 +17,7 @@ RUN git clone https://github.com/crytic/medusa.git \
 ###
 ### Rust build stage
 ###
-FROM rust as rust-builder
+FROM --platform=linux/amd64 rust as rust-builder
 
 # Install foundry (must be in separate RUNs)
 RUN curl -L https://foundry.paradigm.xyz | bash
