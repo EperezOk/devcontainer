@@ -38,9 +38,6 @@ RUN apt-get update \
 ENV SHELL=/usr/bin/zsh
 SHELL ["/usr/bin/zsh", "-c"]
 
-# Set default user, otherwise some commands are not available in the shell
-USER vscode
-
 # Include foundry
 COPY --from=rust-builder /root/.foundry/bin/* /usr/local/bin/
 
@@ -50,11 +47,17 @@ RUN curl -o- https://raw.githubusercontent.com/devcontainers/features/main/src/n
 # Include medusa
 COPY --chown=root:root --from=go-builder /usr/local/bin/medusa /usr/local/bin/medusa
 
+# Make sure tools like pipx install packages for the vscode user instead of root,
+# as vscode is the default user within the container
+USER vscode
+
 # Install slither and python tools
 RUN pipx install solc-select \
     && pipx install slither-analyzer \
     && pipx install crytic-compile
 
-# Install solc
-ENV PATH="/home/vscode/.local/bin:${PATH}"
-RUN solc-select install latest && solc-select use latest
+# Install solc via solc-select
+# Temporarily set PATH, as it is already set in `~/.profile` on container start
+RUN PATH="/home/vscode/.local/bin:${PATH}" \
+    && solc-select install latest \
+    && solc-select use latest
